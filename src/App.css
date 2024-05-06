@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+.App{
+  font-family:'Times New Roman', Times, serif;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.detial-section{
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin:30px 200px;
+  gap:200px
+  
+}
+
+.header{
+  text-align: right;
+  background-color: #F6F6F7;
+  margin-top: 20px;
+  height: 2rem;
+}
+
+.cartBtn{
+  border: none;
+  background-color: transparent;
+  right: 200px;
+  position: relative;
+  top: 0px;
+  height: 2rem;
+}
+
+
+.img-container img{
+  width:auto;
+  height:80vh
+
+}
+
+.price{
+  border-top:1px solid #CCCCCC;
+  border-bottom:1px solid #CCCCCC;
+}
+
+.tooltip-inner{
+  border: 1px solid #CCCCCC;
+  background-color: white;
+  width: 15rem;
+  height: 15 rem;
+}
+
+.cart-container{
+  display: flex;
+  flex-direction: row;
+  margin: 5px 5px;
+  font-size: smaller;
+  padding:0 5px
+
+}
+
+.cart-img-container img{
+  height:100px;
+  margin-right:20px
+}
+
+.empty-cart{
   align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.desc,.size-container,.size-btn{
+  color: gray;
+}
+
+.size-btn{
+  margin-right: 10px;
+  width:40px;
+  height:40px;  border: none;
+  background-color: white;
+  border: 1px solid #CCCCCC;
+}
+
+.size-btn-active{
+  color: black !important;
+  border: 2px solid #222222 !important
+}
+
+.size-container p{
+  font-size: small;
+}
+
+.size-container span{
+ color:#C90000
+}
+
+
+.add{
+  padding:5px 5px;
+  width:150px;
+  height:40px;
+  margin-top:10px;
+  background-color: white;
+  border: 2px solid black;
+  font-weight: 700;
+
+}
+.add:hover{
+  background-color: black;
   color: white;
+  animation-duration: 0.2s;
+  animation-name: addBtnAnimation;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes addBtnAnimation {
+  from{background-color: white;}
+  to{background-color: black;}
+
+  from{color: black;}
+  to{color: white;}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.cart-btn-active{
+  background-color: white;
+  border: 1px solid #CCCCCC;
+  border-bottom: 1px solid white;
+  transition: 0.2ms;
+}
+
+#cart-item{
+  inset: -6px auto auto -85px !important;
+}
+
+.info-container p{
+  line-height:20px;
+}
+.info-container{
+  width: 100%;
+  min-width: 250px
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .item-container {
+    margin: 0px 150px !important;
+    gap:0px !important;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "i"
+    "f";
   }
-  to {
-    transform: rotate(360deg);
+  .item-container{
+    grid-area: i;
+  }
+  .info-container{
+    grid-area: f;
+  }
+  .cartBtn{
+    right:50px
+  }
+  .img-container{
+    display: flex;
+    justify-content: center;
+  }
+  .img-container img{
+    width: auto;
+    height:85vh !important;
+
+  }
+  .info-container{
+    min-width: none !important;
+  }
+  .cart-img-container img{
+    height:150px;
+    margin-right:20px
+  }
+  #cart-item {
+    inset: -6px auto auto -45px !important;
+  }
+  .tooltip-inner{
+    width: 20rem;
+    height: 30rem;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .item-container{
+    gap:100px
   }
 }
+
